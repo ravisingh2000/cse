@@ -1,27 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-float avg_wait_time(int wt[], int n)
-{
-    float x = 0;
-    int i,sum = 0;
-    for(i=0;i<n;i++)
-        sum = sum + wt[i];
-x = sum * 1.0;
-    x = x / n;
-    return x;
-}
 
-float avg_turnaround_time(int tat[], int n)
-{
-    float x = 0;
-    int i,sum = 0;
-    for(i=0;i<n;i++)
-        sum = sum + tat[i];
-    x = sum * 1.0;
-    x = x / n;
-    return x;
-}
 void rearrange_process_queue(int pq[],int rt[],int pty[],int n,int running_processes)
 {
     int i;
@@ -160,16 +140,5 @@ int at[10],bt[10],rt[10],pq[10],pty[10],pty1[10],pflag[10],tat[10],wt[10];
         if(flag == 1)
         running_processes = running_processes - 1;
 }
-printf("\n\nExecution Data:\n");
-   
-   printf("|\tProcess\t|\tAT\t|\tBT\t|   Priority   |\tTAT\t|\tWT\t|\n");
-   for(i=0;i<n;i++)
-   {
-       printf("|\t%d\t|\t%d\t|\t%d\t|\t%d\t|\t%d\t|\t%d\t|\n",i+1,at[i],bt[i],pty1[i],tat[i],wt[i]);
-   }
 
- printf("\n\nAverage Waiting Time= %f\n",avg_wait_time(wt,n));
-  printf("Avg Turnaround Time = %f\n",avg_turnaround_time(tat,n));
-  
-return 0;
 }
